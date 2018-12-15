@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.job.manager.model.MUserRoleConfig" table="M_USER_ROLE_CONFIG" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="ID">
+            <generator class="uuid"/>
+        </id>
+        <property name="inputTime" column="INPUT_TIME"/>
+        <property name="createUser" column="CREATE_USER"/>
+        <property name="lastUpdateUser" column="LAST_UPDATE_USER"/>
+        <property name="userId" column="USER_ID" />
+        <property name="roleId" column="ROLE_ID"/>
+    </class>
+</hibernate-mapping>

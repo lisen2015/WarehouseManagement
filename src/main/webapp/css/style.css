@@ -1,0 +1,430 @@
+/*-----------------公共部分-------------------*/
+a:link,a:visited {  COLOR: #205CB2;  TEXT-DECORATION: none }
+a:hover {  COLOR: #0066cc;  TEXT-DECORATION: underline  }
+.font_white {  font-size: 12px;  font-weight: normal;  color: #ffffff;  font-family: Arial, Helvetica, sans-serif;  }
+.font_td {  font-size: 12px;  font-weight: normal;  font-family: Arial, Helvetica, sans-serif;  }
+.font_td2 {  font-size: 14px;  font-weight: normal;  font-family: Arial, Helvetica, sans-serif;  }
+.tree-node{  height: 26px;  vertical-align: middle;  }
+.ph-label {  position: absolute;  padding: 0 0 0 6px;  line-height: 26px;  height: 26px;  color: #404040; opacity: 1; font-size: 12px; transition: all .2s ease-out; -webkit-transition: all .2s ease-in; -moz-transition: all .2s ease-out; }
+input.error { border: 1px solid red; }
+label.error { background:url("../images/unchecked.gif") no-repeat 0px 0px; padding-left: 16px; padding-bottom: 2px; font-weight: bold; font-size: 12px; color: #EA5200; }
+.table-d table{ background:blue}
+.table-d table td{ background:#FFF;font-size: 25px;font-weight:normal}
+.table-c table{ background:blue}
+.table-c table td{ background:#FFF;font-size: 10px;font-weight:normal}
+.table-e table{ background:blue}
+.table-e table td{ background:#FFF;font-size: 20px;font-weight:normal}
+#titlelogo{ height:52px;text-align: left;width: 80%;background:url("../images/sysLogo.png") no-repeat; }
+#topmenu span{ padding-right:10px; }
+#topmenu a{ padding-right:20px; }
+form{
+    margin:0;
+    padding:0;
+}
+/*-------------公共部分end---------------*/
+
+.leftdiv{
+    float:left;
+    width:49%;
+}
+.rightdiv{
+    float:left;
+    width:50%;
+}
+.manager_tool{
+    width:100%;
+    overflow: hidden;
+}
+
+.textbox {
+    height:22px;
+    padding:0 2px;
+    border-radius:0;
+}
+
+.dialog-button {
+    text-align:center;
+}
+
+
+.gap-10{
+    width:100%;
+    height:10px;
+}
+.gap-15{
+    width:100%;
+    height:15px;
+}
+.gap-20{
+    width:100%;
+    height:20px;
+}
+.contentbox{
+    font-family: Microsoft Yahei;list-style: none;margin:20px;
+    background:#fff;
+    padding: 5px 10px 10px 10px;
+    border:1px solid #e3e3e3;
+}
+.floor{
+    width:100%;
+}
+.floortitle{
+    width:100%;
+    height:30px;
+    font-size:16px;
+    padding-bottom: 3px;
+    border-bottom:1px solid #e3e3e3;
+}
+.floortitle i{
+    color:#1076ff;
+    font-size:16px;
+    margin-right: 10px;
+}
+.floortitle span.label{
+    color:#424242;
+    color:#1076ff;
+    display:inline-block;
+    line-height: 30px;
+    padding:0 10px;
+
+}
+ul.unstyled{
+    list-style: none;
+    overflow: hidden;
+    padding:0 10px;
+}
+ul.unstyled li{
+    padding: 8px 0;
+    font-size: 13px;
+    line-height: 20px;
+    float:left;
+    margin-right: 40px;
+}
+.floor1 ul.unstyled li {
+    width: 29%;
+}
+
+ul.unstyled li span.label {
+    color: #666;
+    font-size: 13px;
+    margin-right: 7px;
+    display: inline-block;
+}
+ul.unstyled li.long{
+    width:100%;
+    word-break: break-all;
+}
+
+
+.floor2 ul.unstyled li{
+    line-height:30px;
+}
+
+.floor ul.unstyled li select{
+    width: 134px;
+    background-color: #ffffff;
+    background-image: none !important;
+    filter: none !important;
+    border: 1px solid #e5e5e5;
+    outline: none;
+    height: 34px;
+    line-height: 30px;
+    color: #555;
+}
+.floor .cell {
+    padding-left:10px;
+}
+
+.floor .cell span.label{
+    color: #666;
+    font-size: 13px;
+
+    display: inline-block;
+    width:80px;
+}
+
+
+
+.floor .cell .m-wrap{
+    color: #333333;
+    padding: 6px;
+    font-size: 14px;
+    vertical-align: top;
+    background-color: #fff;
+    width:100%;
+    margin-right:10px;
+    border-color:#e5e5e5;
+    outline:0;
+    resize:none;
+}
+
+
+.floor4 .cell .m-wrap{
+    border-color:#aaa;
+}
+
+.floor .cell .lasttd .btn.blue{
+    display:block;
+    margin:5px 0 5px 17px;
+}
+.floor .btn.blue {
+    color: #4d90fe;
+    font-family: Microsoft Yahei;
+    text-shadow: none;
+    border:1px solid  #4d90fe;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 2px;
+    width:66px;
+    text-align: center;
+    background: #fff;
+    outline:none;
+}
+.album {
+    margin: 10px 0px;
+    vertical-align: middle;
+}
+
+.album span.label{
+    display: inline-block;
+}
+
+.cell table.celltable {
+    width:100%;
+}
+
+.cell table.celltable td.firsttd{
+    width:80px;
+}
+
+.cell table.celltable td.middletd{
+    width:80%;
+}
+
+.album table.celltable td.lasttd button.btn{
+    margin-left: 17px;
+}
+
+.album ul.albumul{
+    overflow:hidden;
+    list-style:none;
+    padding: 0;
+    margin:0;
+}
+
+.album ul.albumul li{
+    display:inline-block;
+    height:30px;
+    line-height:30px;
+    overflow:hidden;
+    background: #e9eff3;
+
+}
+
+.showfancybox{
+    float:left;
+    font-size: 13px;
+    color: #555;
+    padding:0 10px 0 10px;
+    color:#555;
+    display:inline-block;
+    height:30px;
+    line-height:30px;
+    /*background:url(../images/bullet_picture.png) center left no-repeat;*/
+}
+.imageCloser{
+    float:right;
+    display:inline-block;
+    width: 30px;
+    height: 30px;
+    background:url(../images/imageCloser.png) center center no-repeat;
+}
+
+.phonememospot{
+    position:relative;
+}
+.phonememospot .datetime{
+    position: absolute;
+    right: 1px;
+    bottom: -29px;
+    font-size: 12px;
+    color: #555;
+}
+.radiop{
+    position:relative;
+    top:6px;
+}
+
+
+.btn {
+    background-color: #e5e5e5;
+    background-image: none;
+    filter: none;
+    border: 0;
+    font-family: Microsoft Yahei;
+    padding: 7px 16px;
+    text-shadow: none;
+    font-size: 14px;
+    color: #333333;
+    cursor: pointer;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn[disabled],
+.btn.disabled {
+    color: #333333;
+    background-color: #d8d8d8;
+}
+
+.btn.blue
+{
+    color: white;
+    text-shadow: none;
+    background-color: #4d90fe;
+}
+.btn.blue:hover,
+.btn.blue:focus,
+.btn.blue:active,
+.btn.blue.active,
+.btn.blue[disabled],
+.btn.blue.disabled {
+    background-color: #0362fd;
+    color: #fff;
+}
+
+
+.btn.yellow {
+    color: white;
+    text-shadow: none;
+    background-color: #ffb848;
+}
+.btn.yellow:hover,
+.btn.yellow:focus,
+.btn.yellow:active,
+.btn.yellow.active,
+.btn.yellow.disabled,
+.btn.yellow[disabled] {
+    background-color: #eca22e !important;
+    color: #fff !important;
+}
+
+.btn.green {
+    color: white;
+    text-shadow: none;
+    background-color: #35aa47;
+}
+.btn.green:hover,
+.btn.green:focus,
+.btn.green:active,
+.btn.green.active,
+.btn.green.disabled,
+.btn.green[disabled]{
+    background-color: #1d943b;
+    color: #fff;
+}
+
+.btn.purple {
+    color: white;
+    text-shadow: none;
+    background-color: #852b99;
+}
+.btn.purple:hover,
+.btn.purple:focus,
+.btn.purple:active,
+.btn.purple.active,
+.btn.purple.disabled,
+.btn.purple[disabled] {
+    background-color: #6d1b81;
+    color: #fff;
+}
+
+.bottomp{
+    width:100%;
+    text-align:center;
+}
+
+.bottomp .btn{
+    margin-left:10px;
+}
+/*----------下载设置--------*/
+#downloadConfig_add p,#downloadConfig_edit p{
+    text-align:center;
+}
+#downloadConfig_add p input.textbox,#downloadConfig_add textarea{
+    width:300px;
+}
+#downloadConfig_edit p input.textbox,#downloadConfig_edit textarea{
+    width:300px;
+}
+#downloadConfig_add p label,#downloadConfig_edit p label{
+    position:relative;
+    top:-20px;
+}
+
+.adddialog p{
+    text-align:center;
+}
+.adddialog textarea{
+    width:300px;
+}
+.adddialog p label{
+    position:relative;
+    top:-20px;
+}
+
+.dialogTable{
+    width:550px;
+    margin:10px auto;
+    font-size:12px;
+}
+.dialogTable textarea{
+    width:475px;
+}
+
+.addDialog{
+    display:none;
+}
+
+
+.radiolabel{
+    font-weight: 700;
+}
+.inputradio{
+    position:relative;
+    top:2px;
+}
+
+#topmenu{
+    padding-right: 50px;
+}
+
+
+#topmenu a{
+   color:#fff;
+}
+
+.wraptitle{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    padding-right: 10px;
+}
+
+
+td[field='messageContent'] div,td[field='answerContent'] div{
+    white-space: normal;
+    word-break: break-all;
+}
+

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.job.manager.model.MAuthFunctionRole" table="M_AUTH_FUNCTION_ROLE" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="ID">
+            <generator class="uuid"/>
+        </id>
+        <property name="isAuth" column="IS_AUTH"/>
+        <property name="inputTime" column="INPUT_TIME"/>
+        <property name="createUser" column="CREATE_USER"/>
+        <property name="lastUpdateUser" column="LAST_UPDATE_USER"/>
+        <property name="roleId" column="ROLE_ID"/>
+        <property name="functionId" column="FUNCTION_ID" />
+        <many-to-one name="function" class="com.job.manager.model.MFunctionConfig" insert="false" update="false">
+            <column name="FUNCTION_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

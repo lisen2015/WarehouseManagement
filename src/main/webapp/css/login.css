@@ -1,0 +1,24 @@
+#login{
+    padding-top:6px;
+}
+p{
+    height:22px;
+    line-height:22px;
+    padding:4px 0 0 25px;
+}
+.textbox{
+    height:22px;
+    padding:0 2px;
+    line-height:22px;
+    border-radius: 0;
+
+}
+#btn {
+    text-align:center;
+}
+.l-btn{
+    border-radius:0;
+}
+.easyui-linkbutton {
+    padding:0 10px;
+}

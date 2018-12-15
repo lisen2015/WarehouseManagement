@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.job.manager.model.VOutInventory" table="V_OUTINVENTORY" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="ID">
+            <generator class="uuid"/>
+        </id>
+        <property name="productId" column="PRODUCT_ID"/>
+        <property name="productName" column="PRODUCT_NAME"/>
+        <property name="outPersion" column="OUTPERSION"/>
+        <property name="outNumber" column="OUTNUMBER"/>
+        <property name="price" column="PRICE"/>
+        <property name="inputTime" column="INPUT_TIME"/>
+        <property name="status" column="STATUS"/>
+        <property name="userName" column="USER_NAME"/>
+        <property name="commit" column="COMMIT"/>
+        <property name="description" column="DESCRIPTION"/>
+        <property name="departmentName" column="DEPARTMENTNAME"/>
+        <property name="auditorTime" column="AUDITOR_TIME"/>
+        <property name="auditorUser" column="AUDITOR_USER"/>
+    </class>
+</hibernate-mapping>

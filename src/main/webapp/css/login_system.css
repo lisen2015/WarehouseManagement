@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+iframe,ul,li,ol,dl,dt,dd,p,table,tr,td,form,button,select,textarea { margin:0; padding:0; font-weight:normal; font-style:normal; list-style-type:none;	border:none;}
+ul {list-style:none;}
+a img {border:none;}
+a {text-decoration:none;}
+body { font:14px "微软雅黑"; margin:0}
+h1,h2,h3,h4,h5,h6{font-size:inherit; font-weight:normal; margin:0;}
+.clear{ clear:both;}
+
+.hearder{ height:90px; /*background:url() center left no-repeat;*/ margin:0 auto; width:1001px;}
+.con{ background:url(../images/syll2.gif) repeat-x; height:auto; width:100%}
+.part{ background:url(../images/syll3.gif) no-repeat; width:1001px; margin:0 auto; }
+.map{ width:664px; height:515px; float:left}
+.login{ overflow:hidden; padding-top:48px;}
+.login h1{ background:url(../images/syll4.gif) no-repeat; width:322px; height:80px; }
+.login_con{ background:url(../images/syll5.gif) repeat-y; width:322px; height:270px}
+.login_foot{ background:url(../images/syll6.gif) no-repeat; height:17px;}
+.name{ background:url(../images/syll7.gif) no-repeat; width:265px; height:34px; margin-left:25px; margin-bottom:22px;}
+.password{ background:url(../images/syll8.gif) no-repeat; width:265px; height:34px; margin-left:25px; margin-bottom:22px;}
+.yzm{margin-left:25px; margin-bottom:22px;}
+.yzm input.yzdd{ border:#c3c3c3 1px solid;height:34px; background-color:#FFFFFF; margin:0; width:145px; padding-left:12px;}
+.yzm img{ margin-left:7px; vertical-align: middle}
+.inputLogin{ border:none;  width:210px; height:32px; line-height:50%; font-size: 14px; margin:1px 0 0 42px; resize:none; outline:none;  }
+.login_auto{ margin-left:25px; margin-bottom:35px; color:#2a2a2a;}
+.login_auto input.dg{ width:18px; height:18px; border:#c3c3c3 1px solid; background-color:#FFFFFF; margin-left:0; vertical-align: middle;}
+.dl_button{ width:265px; height:39px; background-color:#347ddf; display:block; text-align:center; line-height:38px; margin-left:25px; font-size:18px; color:#FFFFFF; margin-bottom:15px;}
+a.dl_button:hover,a.dl_button:link,a.dl_button:visited,a.dl_button:active{color:#fff;text-decoration: none;}
+a.dl_button:hover{ background:#00bbee;  }
+a.lan{ color:#7ebcec; font-size:12px; text-decoration:underline; display:block;float: right;  padding-right: 35px;}
+a.lan:hover{ color:#0033CC}
+.part p{ text-align:center; color:#494949;}
+.font_td {
+	font-size: 12px;
+	font-weight: nomal;
+	font-family: Arial, Helvetica, sans-serif;
+}
+label.error {
+
+  background:url("../images/unchecked.gif") no-repeat 0px 0px;
+  padding-left: 16px;
+
+  padding-bottom: 2px;
+
+  font-weight: bold;
+  font-size: 12px;
+  color: #EA5200;
+}

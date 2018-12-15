@@ -1,0 +1,40 @@
+a,a:link,a:active,a:hover,a:visited{
+    text-decoration: none;
+}
+.title{
+    overflow:hidden;
+}
+.titleleft{
+    float:left;
+}
+.titleright{
+    float:right;
+    height:100%;
+    color:#fff;
+}
+.titleright a{
+    color:#fff;
+    display:inline-block;
+    padding:28px 50px 0 0;
+}
+
+.menutree{
+    margin:15px 0 0 15px;
+}
+.tree-node{
+    height:30px;
+
+    vertical-align: middle;
+}
+
+.tree-node span.tree-title{
+    font-size:18px;
+    height:30px;
+}
+
+.textbox{
+    height:20px;
+    line-height:20px;
+    border-radius: 0;
+    box-sizing: content-box;
+}

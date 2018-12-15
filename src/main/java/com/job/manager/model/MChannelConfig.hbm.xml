@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.job.manager.model.MChannelConfig" table="M_CHANNEL_CONFIG" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="ID">
+            <generator class="uuid"/>
+        </id>
+        <property name="parentId" column="PARENT_ID"/>
+        <property name="channelName" column="CHANNEL_NAME"/>
+        <property name="channelIndex" column="CHANNEL_INDEX"/>
+        <property name="channelLevel" column="CHANNEL_LEVEL"/>
+        <property name="channelUrl" column="CHANNEL_URL"/>
+        <property name="channelUrl2" column="CHANNEL_URL2"/>
+        <property name="isEnd" column="IS_END"/>
+        <property name="isValidate" column="IS_VALIDATE"/>
+        <property name="inputTime" column="INPUT_TIME"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+        <property name="deleteTime" column="DELETE_TIME"/>
+        <property name="createUser" column="CREATE_USER"/>
+        <property name="lastUpdateUser" column="LAST_UPDATE_USER"/>
+    </class>
+</hibernate-mapping>

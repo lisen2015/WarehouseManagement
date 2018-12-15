@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.job.manager.model.CodeTable" table="CODE_TABLE" dynamic-update="true" dynamic-insert="true">
+        <id name="id" column="ID">
+            <generator class="assigned"/>
+        </id>
+        <property name="parentId" column="PARENT_ID"/>
+        <property name="codeDesc" column="code_desc"/>
+        <property name="codeLevel" column="CODE_LEVEL"/>
+        <property name="codeValue1" column="CODE_VALUE1"/>
+        <property name="codeValue2" column="CODE_VALUE2"/>
+        <property name="codeIndex" column="CODE_INDEX"/>
+        <property name="isEnd" column="IS_END"/>
+        <property name="isValidate" column="IS_VALIDATE"/>
+        <property name="inputTime" column="INPUT_TIME"/>
+        <property name="updateTime" column="UPDATE_TIME"/>
+        <property name="deleteTime" column="DELETE_TIME"/>
+        <property name="createUser" column="CREATE_USER"/>
+        <property name="lastUpdateUser" column="LAST_UPDATE_USER"/>
+    </class>
+</hibernate-mapping>

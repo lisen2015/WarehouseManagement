@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="mUserManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.MUser" />
+	</bean>
+	<bean id="mChannelManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.MChannelConfig" />
+	</bean>
+	<bean id="mFunctionManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.MFunctionConfig" />
+	</bean>
+	<bean id="mRoleManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.MUserRole" />
+	</bean>
+	<bean id="mRoleUserManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.MUserRoleConfig" />
+	</bean>
+	<bean id="authRoleManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.MAuthRole" />
+	</bean>
+	<bean id="codeManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.CodeTable" />
+	</bean>
+	<bean id="authFunctionRoleManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.MAuthFunctionRole" />
+	</bean>
+
+
+		<!-- .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-  VIEW .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-. -->
+
+	<bean id="vproductManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.VProduct" />
+	</bean>
+
+	<bean id="vinInventoryManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.VInInventory" />
+	</bean>
+
+	<bean id="voutInventoryManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.VOutInventory" />
+	</bean>
+
+	<!-- .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-. -->
+	<bean id="mDepartmentManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.MDepartment" />
+	</bean>
+	<bean id="productManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.Product" />
+	</bean>
+
+	<bean id="inInventoryManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.InInventory" />
+	</bean>
+
+	<bean id="outInventoryManager" class="com.job.manager.daoManager.BaseDaoManager">
+		<constructor-arg value="com.job.manager.model.OutInventory" />
+	</bean>
+</beans>

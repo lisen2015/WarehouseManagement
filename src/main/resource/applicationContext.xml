@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/task
+	http://www.springframework.org/schema/task/spring-task.xsd
+	http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <!-- 将多个配置文件读取到容器中，交给Spring管理 -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:db.properties</value>
+                <value>classpath:globalConfig.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!-- ===========================连接池配置开始=========================== -->
+    <!-- db1 oracle -->
+
+    <bean id="db1" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${db1.url}" />
+        <property name="username" value="${db1.username}" />
+        <property name="password" value="${db1.password}" />
+        <!--初始化时建立物理连接的个数-->
+        <property name="initialSize" value="${db1.initialSize}" />
+        <!--最小连接池数量-->
+        <property name="minIdle" value="${db1.minIdle}" />
+        <!--最大连接池数量-->
+        <property name="maxActive" value="${db1.maxActive}" />
+        <!-- 配置获取连接等待超时的时间 单位毫秒 -->
+        <property name="maxWait" value="${db1.maxWait}" />
+        <!-- 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。 -->
+        <property name="poolPreparedStatements"	value="${db1.poolPreparedStatements}" />
+        <!-- 指定每个连接上PSCache的大小 -->
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="${db1.maxPoolPreparedStatementPerConnectionSize}" />
+        <!-- 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。
+            在Druid中，不会存在Oracle下PSCache占用内存过多的问题，可以把这个数值配置大一些，比如说100 -->
+        <property name="maxOpenPreparedStatements" value="${db1.maxOpenPreparedStatements}" />
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${db1.timeBetweenEvictionRunsMillis}" />
+        <!-- 配置一个连接在池中最小生存的时间，单位毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${db1.minEvictableIdleTimeMillis}" />
+        <!-- 用来检测连接是否有效的sql，要求是一个查询语句。 -->
+        <property name="validationQuery" value="${db1.validationQuery}" />
+        <!-- 建议配置为true，果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。 -->
+        <property name="testWhileIdle" value="${db1.testWhileIdle}" />
+        <!-- 归申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。 -->
+        <property name="testOnBorrow" value="${db1.testOnBorrow}" />
+        <!-- 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能 -->
+        <property name="testOnReturn" value="${db1.testOnReturn}" />
+    </bean>
+    <!-- ===========================连接池配置结束=========================== -->
+    <!-- ===========================sessionFactory配置开始=================== -->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="db1" />
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.show_sql">${db1.show_sql}</prop>
+                <prop key="hibernate.format_sql">${db1.format_sql}</prop>
+                <prop key="hibernate.jdbc.fetch_size">50</prop>
+                <prop key="hibernate.jdbc.batch_size">100</prop>
+                <!--&lt;!&ndash; 开启二级缓存&ndash;&gt;-->
+                <!--<prop key="hibernate.cache.use_second_level_cache">true</prop>-->
+                <!--&lt;!&ndash; 设置缓存类&ndash;&gt;-->
+                <!--<prop key="hibernate.cache.region.factory_class">net.rubyeye.xmemcached.utils.hibernate.XmemcachedClientFactory</prop>-->
+                <!--&lt;!&ndash; 设置memcache缓存服务器端口 &ndash;&gt;-->
+                <!--<prop key="hibernate.memcached.servers">${xmem.url}</prop>-->
+                <!--&lt;!&ndash;缓存时间 &ndash;&gt;-->
+                <!--<prop key="hibernate.memcached.cacheTimeSeconds">300</prop>-->
+                <!--&lt;!&ndash; 设置二级缓存的前缀名称 &ndash;&gt;-->
+                <!--<prop key="hibernate.cache.region_prefix">quality.cache.ehcache</prop>-->
+                <!--&lt;!&ndash; 否使用结构化的方式缓存对象  &ndash;&gt;-->
+                <!--<prop key="hibernate.cache.use_structured_entries">true</prop>-->
+                <!--&lt;!&ndash; 是否缓存查询结果 &ndash;&gt;-->
+                <!--<prop key="hibernate.cache.use_query_cache">true</prop>-->
+            </props>
+        </property>
+        <property name="mappingDirectoryLocations">
+            <list>
+                <value>classpath:/com/job/manager/model</value>
+            </list>
+        </property>
+    </bean>
+    <!-- ===========================sessionFactory配置结束=================== -->
+    <!-- ===========================Ehcache缓存配置开始============================= -->
+    <!-- ===========================memcached============================= -->
+    <bean name="xmem"   class="net.rubyeye.xmemcached.utils.XMemcachedClientFactoryBean" destroy-method="shutdown">
+        <property name="servers" value="${xmem.url}" />
+        <!-- 二进制协议工厂 -->
+        <property name="commandFactory">
+            <bean class="net.rubyeye.xmemcached.command.TextCommandFactory" />
+        </property>
+        <!-- 使用一致性hash算法 -->
+        <property name="sessionLocator">
+            <bean class="net.rubyeye.xmemcached.impl.KetamaMemcachedSessionLocator" />
+        </property>
+        <!-- 超时 -->
+        <property name="opTimeout" value="${xmem.timeout}" />
+    </bean>
+    <!-- ===========================manager配置结束========================== -->
+    <!-- ===========================事务配置开始============================= -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <aop:config>
+        <aop:pointcut id="productServiceMethods" expression="execution(* com.job.manager.service.impl.*.*(..))"  />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="productServiceMethods" />
+    </aop:config>
+    <tx:advice id="txAdvice" transaction-manager="transactionManager"  >
+        <tx:attributes >
+            <tx:method name="*"         propagation="REQUIRED" read-only="true" />
+            <tx:method name="insert*"   propagation="REQUIRED" rollback-for="java.lang.Exception" />
+            <tx:method name="add*"      propagation="REQUIRED" rollback-for="java.lang.Exception" />
+            <tx:method name="batch*"    propagation="REQUIRED" rollback-for="java.lang.Exception" />
+            <tx:method name="save*"     propagation="REQUIRED" rollback-for="java.lang.Exception" />
+            <tx:method name="update*"   propagation="REQUIRED" rollback-for="java.lang.Exception" />
+            <tx:method name="delete*"   propagation="REQUIRED" rollback-for="java.lang.Exception" />
+            <tx:method name="do*"       propagation="REQUIRED" rollback-for="java.lang.Exception" />
+            <tx:method name="reset*"    propagation="REQUIRED" rollback-for="java.lang.Exception" />
+            <tx:method name="sync*"     propagation="REQUIRED" rollback-for="java.lang.Exception" />
+        </tx:attributes>
+    </tx:advice>
+    <!-- ===========================事务配置结束============================= -->
+    <!-- ===========================自动装配开始============================= -->
+
+    <!-- ===========================manager配置结束========================== -->
+    <import resource="./managerContext.xml"/>
+    <!-- ===========================manager配置结束========================== -->
+    <!-- 使Spring关注Annotation -->
+    <context:annotation-config />
+    <!-- 让Spring通过自动扫描来查询和管理Bean -->
+    <context:component-scan base-package="com.job.manager.service" />
+    <!-- ===========================自动装配结束============================= -->
+
+</beans>
